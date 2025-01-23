@@ -31,7 +31,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    getAllTodos();
+    //getAllTodos();
   }
 
   getAllTodos() async {
