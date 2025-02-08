@@ -31,7 +31,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    //getAllTodos();
+    getAllTodos();
   }
 
   getAllTodos() async {
@@ -39,6 +39,20 @@ class _CalendarScreenState extends State<CalendarScreen> {
     _todoList = List<Todo>.empty(growable: true);
 
     var todos = await _todoService!.readTodos();
+    List<Todo> filteredTodo = List<Todo>.empty(growable: true);
+    for (var map in todos) {
+      if (map['todoDate'] == '2025-01-19') {
+        var todo = Todo();
+        todo.id = map['id'];
+        todo.title = map['title'];
+        todo.description = map['description'];
+        todo.category = map['category'];
+        todo.todoDate = map['todoDate'];
+        todo.isFinished = map['isFinished'];
+        filteredTodo.add(todo);
+      }
+    }
+    print('2回目 ${filteredTodo}');
 
     todos.forEach((todo) {
       setState(() {
@@ -76,7 +90,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
       }
     });
 
-    _selectedEvents.value=_getEventsForDays(_selectedDays);
+    _selectedEvents.value = _getEventsForDays(_selectedDays);
   }
 
   @override

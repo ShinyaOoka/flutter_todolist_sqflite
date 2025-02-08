@@ -17,4 +17,9 @@ class Todo {
 
     return mapping;
   }
+
+  @override
+  String toString() {
+    return 'Todo(id: $id, title: $title, description: $description, category: $category, todoDate: $todoDate, isFinished: $isFinished)';
+  }
 }

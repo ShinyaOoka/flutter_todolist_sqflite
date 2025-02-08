@@ -48,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
     var filteredlist = todoslist.where((list) {
       return list.containsValue('2025-01-19');
     }).toList();
-    print(filteredlist);
+    print('フィルタ結果　${filteredlist}');
 
     todos.forEach((todo) {
       setState(() {
