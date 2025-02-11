@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_todolist_sqflite/screens/calendar_screen.dart';
 import 'package:flutter_todolist_sqflite/screens/categories_screen.dart';
 import 'package:flutter_todolist_sqflite/screens/home_screen.dart';
+import 'package:flutter_todolist_sqflite/screens/json_todo_screen.dart';
 import 'package:flutter_todolist_sqflite/screens/todo_by_category.dart';
 import 'package:flutter_todolist_sqflite/services/category_service.dart';
 import '';
@@ -33,7 +34,9 @@ class _DrawerNavigationState extends State<DrawerNavigation> {
           onTap: () => Navigator.push(
               context,
               new MaterialPageRoute(
-                  builder: (context) => new TodosByCategory(category: category['name'],))),
+                  builder: (context) => new TodosByCategory(
+                        category: category['name'],
+                      ))),
           child: ListTile(
             title: Text(category['name']),
           ),
@@ -71,12 +74,20 @@ class _DrawerNavigationState extends State<DrawerNavigation> {
           ListTile(
             leading: Icon(Icons.calendar_today),
             title: Text('Calender'),
-            onTap: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (context)=>CalendarScreen())),
+            onTap: () => Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => CalendarScreen())),
           ),
           ListTile(
             leading: Icon(Icons.calendar_month_outlined),
             title: Text('CalenderTodo'),
-            onTap: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (context)=>CalendarTodoScreen())),
+            onTap: () => Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => CalendarTodoScreen())),
+          ),
+          ListTile(
+            leading: Icon(Icons.file_copy_outlined),
+            title: Text('json_todo'),
+            onTap: () => Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => json_todo_screen())),
           ),
           Divider(),
           Column(

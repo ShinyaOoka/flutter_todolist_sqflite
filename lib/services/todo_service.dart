@@ -32,3 +32,15 @@ class TodoService {
   }
 
 }
+
+Todo fromJson(Map<String,dynamic> json){
+  Todo todo=Todo();
+  todo.id = json['id'];
+  todo.title=json['title'];
+  todo.description=json['description'];
+  todo.category=json['category'];
+  todo.todoDate=json['todoDate'];
+  todo.isFinished=json['isFinished'];
+
+  return todo;
+}

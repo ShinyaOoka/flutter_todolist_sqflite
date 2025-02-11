@@ -192,6 +192,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Expanded(
             child: ListView.builder(
+                shrinkWrap: true,
                 itemCount: _todoList.length,
                 itemBuilder: (context, index) {
                   return Padding(
@@ -238,8 +239,10 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Row(
                   children: [
-                    Container(
-                      width: 500,
+                    Flexible(
+                      child: Container(
+                        width: 500,
+                      ),
                     ),
                     Expanded(
                         child: Row(
@@ -253,9 +256,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Row(
                   children: [
-                    Container(
-                      width: 500,
-                      child: Text('便秘がちである'),
+                    Flexible(
+                      child: Container(
+                        width: 500,
+                        child: Text('便秘がちである'),
+                      ),
                     ),
                     Expanded(
                         child: Slider(
@@ -286,8 +291,10 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Row(
                   children: [
-                    Container(
-                      width: 500,
+                    Flexible(
+                      child: Container(
+                        width: 500,
+                      ),
                     ),
                     Expanded(
                         child: Row(
@@ -301,9 +308,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Row(
                   children: [
-                    Container(
-                      width: 500,
-                      child: Text('朝早く起きることができない'),
+                    Flexible(
+                      child: Container(
+                        width: 500,
+                        child: Text('朝早く起きることができない'),
+                      ),
                     ),
                     Expanded(
                         child: Slider(
@@ -334,8 +343,10 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Row(
                   children: [
-                    Container(
-                      width: 500,
+                    Flexible(
+                      child: Container(
+                        width: 500,
+                      ),
                     ),
                     Expanded(
                         child: Row(
@@ -349,9 +360,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Row(
                   children: [
-                    Container(
-                      width: 500,
-                      child: Text('体が以前と比べて冷えやすくなった'),
+                    Flexible(
+                      child: Container(
+                        width: 500,
+                        child: Text('体が以前と比べて冷えやすくなった'),
+                      ),
                     ),
                     Expanded(
                         child: Slider(
